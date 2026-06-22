@@ -32,7 +32,7 @@ export default function Home() {
           { icon: '💵', title: 'Counterfeit Currency Detector', desc: 'Computer vision AI that identifies fake Indian currency notes across all denominations with 98.6% accuracy.', status: 'LIVE' },
           { icon: '🛡️', title: 'Fraud Shield Chat', desc: 'Conversational AI that analyzes suspicious calls, messages and situations for digital arrest scams and KYC fraud.', status: 'LIVE' },
           { icon: '🕸️', title: 'Fraud Network Graph', desc: 'Graph AI that maps connections between scammer accounts, mule networks and victims into actionable intelligence.', status: 'LIVE' },
-          { icon: '🗺️', title: 'Crime Heatmap', desc: 'Geospatial intelligence layer showing fraud hotspots, counterfeit seizure points and cybercrime concentration zones.', status: 'COMING SOON' },
+          { icon: '🗺️', title: 'Crime Heatmap', desc: 'Geospatial intelligence layer showing fraud hotspots, counterfeit seizure points and cybercrime concentration zones.', status: 'LIVE' },
         ].map(f => (
           <div key={f.title} style={{ background: '#0d1224', border: '1px solid #1e2a45', borderRadius: '12px', padding: '24px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>

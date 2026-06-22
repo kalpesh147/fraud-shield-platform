@@ -3,6 +3,7 @@ import Home from './pages/Home'
 import CounterfeitDetector from './pages/CounterfeitDetector'
 import FraudShieldChat from './pages/FraudShieldChat'
 import FraudNetworkGraph from './pages/FraudNetworkGraph'
+import CrimeHeatmap from './pages/CrimeHeatmap'
 import './App.css'
 
 const NAV_ITEMS = [
@@ -10,6 +11,7 @@ const NAV_ITEMS = [
   { id: 'counterfeit', label: '💵 Counterfeit Detector' },
   { id: 'fraud-chat', label: '🛡️ Fraud Shield Chat' },
   { id: 'network-graph', label: '🕸️ Fraud Network Graph' },
+  { id: 'crime-heatmap', label: '🗺️ Crime Heatmap' },
 ]
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
       case 'counterfeit': return <CounterfeitDetector />
       case 'fraud-chat': return <FraudShieldChat />
       case 'network-graph': return <FraudNetworkGraph />
+      case 'crime-heatmap': return <CrimeHeatmap />
       default: return <Home />
     }
   }
