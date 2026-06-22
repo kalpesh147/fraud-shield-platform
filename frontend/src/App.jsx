@@ -2,12 +2,14 @@ import { useState } from 'react'
 import Home from './pages/Home'
 import CounterfeitDetector from './pages/CounterfeitDetector'
 import FraudShieldChat from './pages/FraudShieldChat'
+import FraudNetworkGraph from './pages/FraudNetworkGraph'
 import './App.css'
 
 const NAV_ITEMS = [
   { id: 'home', label: '🏠 Home', },
   { id: 'counterfeit', label: '💵 Counterfeit Detector' },
   { id: 'fraud-chat', label: '🛡️ Fraud Shield Chat' },
+  { id: 'network-graph', label: '🕸️ Fraud Network Graph' },
 ]
 
 function App() {
@@ -18,6 +20,7 @@ function App() {
       case 'home': return <Home />
       case 'counterfeit': return <CounterfeitDetector />
       case 'fraud-chat': return <FraudShieldChat />
+      case 'network-graph': return <FraudNetworkGraph />
       default: return <Home />
     }
   }
