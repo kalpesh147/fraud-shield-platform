@@ -48,37 +48,8 @@ A geospatial dashboard plotting fraud complaint density, dominant scam type, and
 
 ## 🏗️ Architecture
 
----
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/dea93515-e2a3-4af1-9471-555526d81c1e" />
 
-┌─────────────────────────────────────────────┐
-
-│              React Frontend (Vite)            │
-
-│  Home | Counterfeit | Chat | Graph | Heatmap   │
-
-└───────────────────┬─────────────────────────┘
-
-│ REST (fetch)
-
-┌───────────────────▼─────────────────────────┐
-
-│            FastAPI Backend (Python)            │
-
-│  ┌─────────────────┐   ┌────────────────────┐ │
-
-│  │ Counterfeit      │   │ Fraud Shield        │ │
-
-│  │ Predictor         │   │ Classifier           │ │
-
-│  │ (TensorFlow CNN)  │   │ (Groq LLM + keyword  │ │
-
-│  │                    │   │  pre-scan)            │ │
-
-│  └─────────────────┘   └────────────────────┘ │
-
-└──────────────────────────────────────────────┘
-
----
 
 ## 🛠️ Tech Stack
 
