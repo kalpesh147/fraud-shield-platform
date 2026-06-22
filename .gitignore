@@ -13,3 +13,9 @@ dist/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Datasets (too large for GitHub)
+backend/app/counterfeit/data/
+backend/app/counterfeit/*.zip
+
+backend/app/counterfeit/counterfeit_model.h5
