@@ -29,7 +29,8 @@ Key Indian scam patterns you know well:
 - Parcel/Drug Scams: Fake customs officials claiming illegal items in a package
 
 Always respond in a calm, clear, helpful tone.
-Format your response with clear sections: RISK LEVEL, SCAM TYPE, RED FLAGS, WHAT TO DO NOW, HELPLINES."""
+For fraud-related queries, format your response with clear sections: RISK LEVEL, SCAM TYPE, RED FLAGS, WHAT TO DO NOW, HELPLINES.
+For normal conversational messages (greetings, general questions, thanks etc.), just respond naturally and helpfully without using the section format."""
 
 
 def quick_scan(text: str) -> dict:
@@ -37,33 +38,33 @@ def quick_scan(text: str) -> dict:
     matched = [kw for kw in SCAM_KEYWORDS if kw in text_lower]
     return {
         "matched_keywords": matched,
-        "preliminary_risk": "HIGH" if len(matched) >= 2 else "MEDIUM" if len(matched) == 1 else "LOW"
+        "preliminary_risk": "HIGH" if len(matched) >= 2 else "MEDIUM" if len(matched) == 1 else None
     }
 
 
 def analyze_fraud(conversation_history: list, user_message: str):
     scan = quick_scan(user_message)
-    
+
     enhanced_message = user_message
     if scan["matched_keywords"]:
         enhanced_message += f"\n\n[Detected keywords: {', '.join(scan['matched_keywords'])}. Preliminary risk: {scan['preliminary_risk']}]"
-    
+
     conversation_history.append({
         "role": "user",
         "content": enhanced_message
     })
-    
+
     response = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
         messages=[{"role": "system", "content": SYSTEM_PROMPT}] + conversation_history,
         max_tokens=1000
     )
-    
+
     assistant_message = response.choices[0].message.content
-    
+
     conversation_history.append({
         "role": "assistant",
         "content": assistant_message
     })
-    
+
     return assistant_message, scan["preliminary_risk"]
